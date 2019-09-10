@@ -1,0 +1,23 @@
+{
+  "name": "send-slack-from-lamda",
+  "version": "1.0.0",
+  "description": "send slack message from lamda function",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "export NODE_PATH=\"${PWD}/layer/nodejs/node_modules\" && sls offline start",
+    "deploy": "sls deploy -v",
+    "remove": "sls remove -v"
+  },
+  "keywords": [
+    "aws",
+    "serverless"
+  ],
+  "author": "piroz",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless": "^1.51.0",
+    "serverless-offline": "^5.10.1",
+    "serverless-offline-scheduler": "^0.3.8"
+  }
+}

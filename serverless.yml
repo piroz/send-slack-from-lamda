@@ -1,0 +1,31 @@
+service: send-slack-from-lamda
+plugins:
+  - serverless-offline
+  - serverless-offline-scheduler
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: ap-northeast-1
+  timeout: 30
+  memorySize: 128
+package:
+  exclude:
+    - .git/**
+    - node_modules/.bin
+    - node_modules/.bin/*
+    - node_modules/aws-sdk
+    - node_modules/aws-sdk/**
+    - README.md
+functions:
+  send-slack:
+    handler: handler.main
+    environment:
+      WEBHOOK_URL: https://hooks.slack.com/services/AAAAAAAAA/BBBBBBBBB/CCCCCCCCCCCCCCCCCCCCCCCC
+    events:
+      - schedule: cron(*/1 * * * ? *)
+    layers:
+      - {Ref: RequestLambdaLayer}
+
+layers:
+  request:
+    path: layer
