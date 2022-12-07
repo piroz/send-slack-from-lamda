@@ -16,7 +16,7 @@
   "author": "piroz",
   "license": "MIT",
   "devDependencies": {
-    "serverless": "^1.51.0",
+    "serverless": "^3.25.1",
     "serverless-offline": "^5.10.1",
     "serverless-offline-scheduler": "^0.3.8"
   }
